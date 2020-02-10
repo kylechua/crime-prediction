@@ -52,3 +52,40 @@ This tool implements a crime prediction algorithm in a geological space using he
     python plot_allocations.py
     ````
 
+# Per-File Developer Docs
+
+## aggregate_plots.py
+
+Contains functionality for aggregating the various plots produced by different prediction algorithms, and saves them to one mathplotlib figure.
+
+## fwdfiles folder
+
+Contains the backend code for making predictions, separated by algorithm.
+
+## plot_allocations.py
+
+Contains the code to plot resource allocations based on crimes avoided.  Uses results from calculate_resource_allocation.py in the results directory.
+
+## calculate_resource_allocation.py
+
+Calculates resource allocation based on chosen method, prediction model, and places results in the results directory.  Uses functions defined in fwdfiles/resourceAllocation_functions.py.
+
+## make_predictions.py
+
+Forms predictions based on the functions in fwdfiles directory (forecast_LSTM.py, forecast_ARIMA.py etc.).  Manages the choice of prediction method.
+
+## plot_predictions.py
+
+Plots predictions made in make_predictions.  Separates code according to grid based vs. cluster based.
+
+## config.py
+
+Stores the settings as variables for prediction method, grid vs. cluster, etc.
+
+## plotPredictions.py
+
+Duplicates plot_predictions,py
+
+## parse_data.py
+
+Parses data stored in a csv and saves them in pickle format.
